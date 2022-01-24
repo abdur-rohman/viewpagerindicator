@@ -48,7 +48,7 @@ class DrawableIndicator @JvmOverloads constructor(
 
   override fun onDraw(canvas: Canvas) {
     super.onDraw(canvas)
-    if (getPageSize() > 1 && mCheckedBitmap != null && mNormalBitmap != null) {
+    if (mCheckedBitmap != null && mNormalBitmap != null) {
       for (i in 0 until getPageSize()) {
         var left: Int
         var top: Int

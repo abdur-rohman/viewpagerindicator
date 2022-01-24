@@ -53,18 +53,15 @@ public class FigureIndicatorView extends BaseIndicatorView {
   @Override
   protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
-    if (getPageSize() > 1) {
-      mPaint.setColor(backgroundColor);
-      canvas.drawCircle(getWidth() / 2f, getHeight() / 2f, radius, mPaint);
-      mPaint.setColor(textColor);
-      mPaint.setTextSize(textSize);
-      String text = getCurrentPosition() + 1 + "/" + getPageSize();
-      int textWidth = (int) mPaint.measureText(text);
-      Paint.FontMetricsInt fontMetricsInt = mPaint.getFontMetricsInt();
-      int baseline = (getMeasuredHeight() - fontMetricsInt.bottom + fontMetricsInt.top) / 2
-          - fontMetricsInt.top;
-      canvas.drawText(text, (getWidth() - textWidth) / 2f, baseline, mPaint);
-    }
+    mPaint.setColor(backgroundColor);
+    canvas.drawCircle(getWidth() / 2f, getHeight() / 2f, radius, mPaint);
+    mPaint.setColor(textColor);
+    mPaint.setTextSize(textSize);
+    String text = getCurrentPosition() + 1 + "/" + getPageSize();
+    int textWidth = (int) mPaint.measureText(text);
+    Paint.FontMetricsInt fontMetricsInt = mPaint.getFontMetricsInt();
+    int baseline = (getMeasuredHeight() - fontMetricsInt.bottom + fontMetricsInt.top) / 2 - fontMetricsInt.top;
+    canvas.drawText(text, (getWidth() - textWidth) / 2f, baseline, mPaint);
   }
 
   public void setRadius(int radius) {
